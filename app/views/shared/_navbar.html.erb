@@ -1,28 +1,24 @@
-<div class="navbar navbar-expand-sm navbar-lewagon d-flex align-items-center justify-content-between">
-  <% if user_signed_in? %>
-      <%= form_tag animals_path, method: :get, class: 'form-inline text-center d-flex form-search' do %>
-        <div>
-          <%= text_field_tag :address, params[:address], placeholder: "Find near you", class: 'form-control-search text-center search-location' %>
-        </div>
-        <div>
-          <% label :distance, "Distance (Km) : " %>
-          <% text_field_tag :distance, params[:distance], type: "number", default: 150 %>
-        </div>
-        <%= button_tag(type: "submit", class: "btn btn-outline-primary search-btn") do %>
-          <i class="fas fa-search"></i>
+<% if user_signed_in? %>
+  <div class="navbar navbar-expand-sm navbar-lewagon d-flex align-items-center justify-content-between">
+        <%= form_tag animals_path, method: :get, class: 'form-inline text-center d-flex form-search' do %>
+          <div>
+            <%= text_field_tag :address, params[:address], placeholder: "Find near you", class: 'form-control-search text-center search-location' %>
+          </div>
+          <div>
+            <% label :distance, "Distance (Km) : " %>
+            <% text_field_tag :distance, params[:distance], type: "number", default: 150 %>
+          </div>
+          <%= button_tag(type: "submit", class: "btn btn-outline-primary search-btn") do %>
+            <i class="fas fa-search"></i>
+          <% end %>
         <% end %>
-      <% end %>
-      <div class='d-flex log-icon'>
-        <%= link_to "Dog out", destroy_user_session_path, method: :delete, class: "nav-link" %>
-        <% if current_user.photo.attached?%>
-          <%= cl_image_tag current_user.photo.key, class: "avatar mr-3" %>
-        <% else %>
-          <%= image_tag "avatar_dog.jpg", class: "avatar ml-3" %>
-        <% end %>
-      </div>
-  <% else %>
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "catanddog-logo.gif" %>
-    <% end %>
-  <% end %>
-</div>
+        <div class='d-flex log-icon'>
+          <%= link_to "Dog out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+          <% if current_user.photo.attached?%>
+            <%= cl_image_tag current_user.photo.key, class: "avatar mr-3" %>
+          <% else %>
+            <%= image_tag "avatar_dog.jpg", class: "avatar ml-3" %>
+          <% end %>
+        </div>
+  </div>
+<% end %>
