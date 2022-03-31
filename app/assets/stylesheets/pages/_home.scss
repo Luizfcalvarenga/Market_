@@ -46,7 +46,7 @@ background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #a7f3906b;
+  background: rgb(22,27,34);
   border-radius: 20px;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.199);
 
@@ -142,7 +142,6 @@ input[type="submit"]:hover{
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.199);
 }
 .signup_link a:hover{
-  text-decoration: underline;
   border-radius: 10%;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.199);
 }
